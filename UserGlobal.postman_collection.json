@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "4b48c425-6ae1-43f7-980d-5588b2eb2bd2",
+		"name": "UserGlobal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22155552"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\":\"Gustavo\", \r\n    \"email\": \"prueba@prueba.com\", \r\n    \"password\": \"Prueba011\", \r\n    \"phones\": [ { \"number\": 123456, \"cityCode\": 1900, \"countryCode\": \"ARG\" } ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/sign-up",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJnbG9iYWxMb2dpY0pXVCIsInN1YiI6IjVkZTc1MWZjLTMwNGYtNGE4My1iNWM0LTZkMGZiNWJmNzk3NSIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2NTk1NzkwOTl9.RYna-BzSvs8SqGqd-xqRPu-w854Dt7hty2twVsQkBdSoax4vKDR7wDCtV_yABD3lQ5mhknOYoEt-B0KwvLAv6w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
